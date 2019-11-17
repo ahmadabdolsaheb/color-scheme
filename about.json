@@ -1,12 +1,12 @@
 {
-  "name": "Alien Night | A Dark Discourse Theme",
+  "name": "palette 1",
   "about_url": "https://github.com/B-iggy/alien-night-discourse-dark-theme",
   "license_url": "https://github.com/B-iggy/alien-night-discourse-dark-theme/blob/master/LICENSE",
   "authors": "Ignaz Biegler",
   "theme_version": "2.0",
   "assets": {},
   "color_schemes": {
-    "Alien Night | A Dark Discourse Theme": {
+    "light1": {
       "primary": "0a0a23",
       "secondary": "ffffff",
       "tertiary": "019245",
