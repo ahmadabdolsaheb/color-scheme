@@ -1,14 +1,22 @@
 {
-  "name": "palette 1",
+  "name": "palette 2",
   "about_url": "https://github.com/B-iggy/alien-night-discourse-dark-theme",
   "license_url": "https://github.com/B-iggy/alien-night-discourse-dark-theme/blob/master/LICENSE",
   "authors": "Ignaz Biegler",
   "theme_version": "2.0",
   "assets": {},
   "color_schemes": {
-    "light1": {
+    "dark": {
+      "primary-very-low": "dfdfe2",
+      "primary-low": "d0d0d5",
+      "primary-low-mid": "3b3b4f",
+      "primary-medium": "2a2a40",
+      "primary-high": "1b1b32",
       "primary": "0a0a23",
       "secondary": "ffffff",
+      "secondary-low": "d0d0d5",
+      "secondary-medium": "dfdfe2",
+      "secondary-high": "f5f6f7",
       "tertiary": "019245",
       "quaternary": "019494",
       "header_background": "0a0a23",
