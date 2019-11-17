@@ -1,0 +1,23 @@
+{
+  "name": "Alien Night | A Dark Discourse Theme",
+  "about_url": "https://github.com/B-iggy/alien-night-discourse-dark-theme",
+  "license_url": "https://github.com/B-iggy/alien-night-discourse-dark-theme/blob/master/LICENSE",
+  "authors": "Ignaz Biegler",
+  "theme_version": "2.0",
+  "assets": {},
+  "color_schemes": {
+    "Alien Night | A Dark Discourse Theme": {
+      "primary": "0a0a23",
+      "secondary": "ffffff",
+      "tertiary": "019245",
+      "quaternary": "019494",
+      "header_background": "0a0a23",
+      "header_primary": "fff",
+      "highlight": "ffff4d",
+      "danger": "e45735",
+      "success": "019245",
+      "love": "d41313"
+    }
+  },
+  "learn_more": "https://meta.discourse.org/t/beginners-guide-to-using-discourse-themes/91966"
+}
