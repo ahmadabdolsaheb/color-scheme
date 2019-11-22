@@ -666,7 +666,62 @@ img.avatar {
   box-shadow: none;
 }
 
-// * {
-//   border-radius: 0px !important;
-//   box-shadow: none !important;
-// }
+.d-header {
+  background: $--gray90;
+}
+
+/*----------------------------------removing nav icons for desktop----------------------------*/
+
+@media (min-width: 800px) {
+  #current-user a:before {
+    content: "Profile";
+  }
+
+  #search-button:before {
+    content: "Search";
+  }
+
+  #toggle-hamburger-menu:before {
+    content: "Menu";
+  }
+
+  #current-user a:before,
+  #toggle-hamburger-menu:before,
+  #search-button:before {
+    color: white;
+    height: auto;
+    width: auto;
+    // height: 35px;
+    // width: 90px;
+    // top: 20px;
+    // position: absolute;
+    // top: 20px;
+    // left: 50%;
+    // margin-left: -45px;
+  }
+
+  #current-user div img,
+  .fa.d-icon.d-icon-search.svg-icon.svg-node,
+  .fa.d-icon.d-icon-bars.svg-icon.svg-node {
+    display: $n;
+  }
+
+  .d-header-icons .icon {
+    &:hover,
+    &:focus {
+      background-color: white;
+    }
+    // height: auto;
+    // width: auto;
+
+    height: 35px;
+    width: 90px;
+    padding: 0px;
+  }
+
+  #current-user a:hover:before,
+  #toggle-hamburger-menu:hover:before,
+  #search-button:hover:before {
+    color: $--gray90;
+  }
+}

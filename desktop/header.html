@@ -1,3 +1,22 @@
+<script type="text/discourse-plugin" version="0.8">
+  const h = require("virtual-dom").h;
+    api.reopenWidget("user-dropdown", {
+      html(attrs) {
+          console.log(attrs);
+          return h(
+            "a.icon",
+            {
+              attributes: {
+                href: 'attrs.user.get("path")',
+                "data-auto-route": true
+              }
+            },
+            this.attach("header-notifications", attrs)
+          );
+        }
+    });
+</script>
+
 <script type="text/x-handlebars" data-template-name="topic-list-header.raw">
   {{#if bulkSelectEnabled}}
     <th class="bulk-select">
