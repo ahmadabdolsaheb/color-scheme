@@ -85,7 +85,7 @@
   </td>
 
   {{#if showPosters}}
-      <td><a href="/users/{{topic.creator.username}}" data-auto-route="true" data-user-card="{{topic.creator.username}}">{{topic.creator.username}}</a></td>
+      <td class="poster-names"><a href="/users/{{topic.creator.username}}" data-auto-route="true" data-user-card="{{topic.creator.username}}">{{topic.creator.username}}</a></td>
   {{/if}}
   {{raw "list/posts-count-column" topic=topic}}
 
