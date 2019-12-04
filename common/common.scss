@@ -675,6 +675,10 @@ img.avatar {
   background: $--gray90;
 }
 
+.d-header .d-icon {
+  display: $n;
+}
+
 .badge-notification,
 .badge-group {
   border-radius: none;
@@ -768,12 +772,17 @@ img.avatar {
 
 .docked #site-logo {
   display: block;
-  height: 24px;
   width: auto;
 }
 
 .docked #site-logo.logo-big {
+  height: 24px;
   width: 210px;
+  margin: 7px 0px;
+}
+
+.docked #site-logo.logo-small {
+  height: 36px;
   margin: 7px 0px;
 }
 
