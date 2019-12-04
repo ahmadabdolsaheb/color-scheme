@@ -675,6 +675,11 @@ img.avatar {
   background: $--gray90;
 }
 
+.badge-notification,
+.badge-group {
+  border-radius: none;
+}
+
 /*----------------------------------removing nav icons for desktop----------------------------*/
 
 #current-user a.icon:before {
@@ -744,6 +749,29 @@ img.avatar {
   color: $--gray90;
 }
 
+//exeptions
+.docked .d-header .title a {
+  &:before {
+    content: "";
+    position: blocked;
+    top: auto;
+    left: auto;
+  }
+}
+
+.docked #site-logo {
+  display: block;
+  height: 24px;
+}
+
+.docked #site-logo.logo-big {
+  width: 210px;
+  margin: 7px 0px;
+}
+
+@media (max-width: 400px) {
+}
+
 //header notifications
 
 .d-header-icons .unread-private-messages,
@@ -787,12 +815,19 @@ img.avatar {
   .d-header > .wrap {
     margin: 0px;
   }
-}
 
+  .d-header-icons {
+    margin: 0px;
+  }
+}
 //main page grid
 
 td.poster-names a {
-  color: #919191;
+  color: dark-light-choose($primary-medium, $secondary-medium);
+}
+
+#whos-online {
+  color: dark-light-choose($primary-medium, $secondary-medium);
 }
 
 //buttons
@@ -825,14 +860,6 @@ td.poster-names a {
 
   &.hidden {
     display: $n;
-  }
-
-  .d-icon {
-    opacity: 0.9;
-
-    &:hover {
-      opacity: 1;
-    }
   }
 
   &.btn-primary {
