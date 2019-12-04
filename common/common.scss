@@ -751,17 +751,25 @@ img.avatar {
 
 //exeptions
 .docked .d-header .title a {
+  width: auto;
+  height: auto;
   &:before {
     content: "";
     position: blocked;
     top: auto;
     left: auto;
   }
+  &:hover,
+  &:focus {
+    background-color: $--theme-color;
+    color: $--theme-color;
+  }
 }
 
 .docked #site-logo {
   display: block;
   height: 24px;
+  width: auto;
 }
 
 .docked #site-logo.logo-big {
