@@ -603,7 +603,7 @@ p.footer-donation {
   .footer-col-1,
   .footer-col-2,
   .footer-col-3 {
-    flex: 1 0 50%;
+    flex: 1 0 45%;
     height: auto;
     font-size: 16.5;
   }
@@ -793,4 +793,337 @@ img.avatar {
 
 td.poster-names a {
   color: #919191;
+}
+
+//buttons
+.btn,
+.select-kit.dropdown-select-box .dropdown-select-box-header {
+  position: relative;
+  color: $primary $i;
+  background-color: transparent;
+  border: 3px solid $primary;
+
+  &:focus,
+  &:hover,
+  &.btn-hover,
+  &.btn-social:hover,
+  &.btn-social.btn-hover,
+  &:active,
+  &.btn-active {
+    background-color: $primary $i;
+    color: $fcc-quaternary-background $i;
+  }
+
+  &[href] {
+    color: $fcc-quaternary-color;
+  }
+
+  &[disabled],
+  &.disabled {
+    opacity: 0.6 $i;
+  }
+
+  &.hidden {
+    display: $n;
+  }
+
+  .d-icon {
+    opacity: 0.9;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &.btn-primary {
+    color: $fcc-tertiary-color;
+    background-color: $fcc-tertiary-background;
+    &:hover,
+    &.btn-hover {
+      background-color: $fcc-highlight-color;
+      color: $fcc-secondary-background;
+    }
+  }
+
+  &.btn-danger {
+    color: $fcc-quaternary-color;
+    background-color: $danger;
+
+    &:hover,
+    &.btn-hover {
+      background-color: lighten($danger, 15%);
+      color: $fcc-quaternary-color;
+    }
+  }
+}
+
+.d-editor-button-bar button {
+  background-color: transparent;
+  border: $n;
+  box-shadow: $n;
+  background: $n;
+}
+
+// Pill nav
+// --------------------------------------------------
+
+.nav-pills {
+  > li {
+    > a {
+      color: $primary;
+      border: 3px solid $primary;
+      &:hover {
+        color: $fcc-secondary-background;
+        background-color: $primary;
+        border: 3px solid $primary;
+      }
+    }
+    a.active {
+      color: $fcc-secondary-background;
+      background-color: $primary;
+      border: 3px solid $primary;
+    }
+  }
+}
+
+//topic-list
+
+.list-controls {
+  clear: both;
+  margin-bottom: 5px;
+  .combo-box .combo-box-header {
+    background: $secondary;
+    color: $primary;
+    border: 3px solid $primary;
+    padding: 6px 12px;
+    font-size: $font-up-1;
+    transition: none;
+    height: 38px; // IE11 needs any height here for vertical centering, overriden elsewhere by min-height
+    &:hover,
+    &:focus {
+      color: $fcc-secondary-background;
+      background-color: $primary;
+    }
+  }
+  .select-kit {
+    align-self: center;
+    .select-kit-collection {
+      font-size: $font-down-1;
+      max-height: 40vh;
+      .texts,
+      .icons {
+        font-size: $font-up-1;
+      }
+    }
+    &.categories-admin-dropdown,
+    &.tags-admin-dropdown,
+    &.category-notifications-button,
+    &.tag-notifications-button {
+      float: right;
+      button {
+        display: inline-block;
+      }
+    }
+  }
+  .category-heading {
+    max-width: 100%;
+  }
+}
+
+.topic-list-item.visited,
+.latest-topic-list-item.visited,
+.category-topic-link.visited {
+  a.title:not(.badge-notification) {
+    color: $primary-medium;
+  }
+}
+
+.topic-list-main-link {
+  font-size: $font-up-1;
+  a.title {
+    padding: 15px 0;
+    word-break: break-word;
+    color: $primary;
+  }
+
+  .anon & {
+    a.title:visited:not(.badge-notification) {
+      color: $primary-medium;
+    }
+  }
+
+  a.title.visited:not(.badge-notification) {
+    color: $primary-medium;
+  }
+}
+
+//icons remove
+/*----------------------------------icon and text replacemt----------------------------*/
+
+// pencil icon
+svg.fa.d-icon.d-icon-pencil-alt.svg-icon.svg-node {
+  display: $n;
+}
+
+button.widget-button.btn-flat.edit.no-text.btn-icon:after,
+.post-info.edits:after {
+  content: "Edit";
+}
+
+.post-info.edits:hover {
+  text-decoration: underline;
+}
+
+// reply icon
+button.widget-button.btn.btn-default.create.no-text.btn-icon:before {
+  content: "Reply";
+}
+
+svg.fa.d-icon.d-icon-reply.svg-icon.svg-node {
+  display: $n;
+}
+
+//tracking
+.select-kit.dropdown-select-box .dropdown-select-box-header.is-focused,
+.widget-component-connector
+  .select-kit.dropdown-select-box
+  .dropdown-select-box-header:before {
+  content: "Tracking";
+}
+
+.select-kit-header.btn-default.dropdown-select-box-header.btn.no-text.btn-icon:before {
+  content: "Tracking";
+}
+
+svg.fa.d-icon.d-icon-d-tracking.svg-icon.svg-string {
+  display: $n;
+}
+
+// link
+
+button.widget-button.btn-flat.share.no-text.btn-icon:before {
+  content: "Share";
+}
+
+svg.fa.d-icon.d-icon-link.svg-icon.svg-node {
+  display: $n;
+}
+
+//more
+.notifications button.widget-button.btn.no-text.btn-icon:before,
+button.widget-button.btn-flat.show-more-actions.no-text.btn-icon:before {
+  content: "More";
+}
+
+svg.fa.d-icon.d-icon-ellipsis-h.svg-icon.svg-node {
+  display: $n;
+}
+
+//flag
+button.widget-button.btn-flat.create-flag.no-text.btn-icon:before {
+  content: "Flag";
+}
+
+svg.fa.d-icon.d-icon-flag.svg-icon.svg-node {
+  display: $n;
+}
+
+//bookmark
+button.widget-button.btn-flat.bookmark.bookmarked.no-text.btn-icon:before {
+  content: "Clear Bookmark";
+}
+
+button.widget-button.btn-flat.bookmark.no-text.btn-icon:before {
+  content: "Bookmark";
+}
+svg.fa.d-icon.d-icon-bookmark.svg-icon.svg-node.d-hover {
+  display: $n;
+}
+
+//dropdown
+.map button.widget-button.btn.btn.no-text.btn-icon:before {
+  content: "Collapse";
+}
+
+.map-collapsed button.widget-button.btn.btn.no-text.btn-icon:before {
+  content: "Expand";
+}
+
+svg.fa.d-icon.d-icon-chevron-down.svg-icon.svg-node {
+  display: $n;
+}
+
+//search
+.btn-primary.search-cta.btn.no-text.btn-icon:before {
+  content: "Search";
+}
+
+svg.fa.d-icon.d-icon-far-trash-alt.svg-icon.svg-node {
+  display: $n;
+}
+
+// delete
+button.widget-button.btn-flat.delete.no-text.btn-icon:before {
+  content: "delete";
+}
+
+//remove icons on post footer
+svg.fa.d-icon.d-icon-plus.svg-icon.svg-string,
+svg.fa.d-icon.d-icon-envelope.svg-icon.svg-string,
+svg.fa.d-icon.d-icon-chart-bar.svg-icon.svg-string,
+svg.fa.d-icon.d-icon-magic.svg-icon.svg-string,
+svg.fa.d-icon.d-icon-caret-right.svg-icon.svg-string,
+svg.fa.d-icon.d-icon-chevron-up.svg-icon.svg-node,
+svg.fa.d-icon.d-icon-bookmark.svg-icon.svg-node,
+svg.fa.d-icon.d-icon-d-muted.svg-icon.svg-string,
+svg.fa.d-icon.d-icon-d-watching.svg-icon.svg-string,
+svg.fa.d-icon.d-icon-d-regular.svg-icon.svg-string,
+svg.fa.d-icon.d-icon-bookmark.svg-icon.svg-string,
+svg.fa.d-icon.d-icon-link.svg-icon.svg-string,
+svg.fa.d-icon.d-icon-flag.svg-icon.svg-string,
+svg.fa.d-icon.d-icon-reply.svg-icon.svg-string,
+svg.fa.d-icon.d-icon-pencil-alt.svg-icon.svg-string,
+svg.fa.d-icon.d-icon-search.svg-icon.svg-string,
+svg.fa.d-icon.d-icon-certificate.svg-icon.svg-string,
+svg.fa.d-icon.d-icon-user.svg-icon.svg-string,
+svg.fa.d-icon.d-icon-check-square.svg-icon.svg-string,
+svg.fa.d-icon.d-icon-d-watching-first.svg-icon.svg-string,
+svg.fa.d-icon.d-icon-heart.svg-icon.svg-node,
+svg.fa.d-icon.d-icon-certificate.svg-icon.svg-node,
+svg.fa.d-icon.d-icon-comment.svg-icon.glyph.svg-string,
+svg.fa.d-icon.d-icon-far-envelope.svg-icon.svg-string,
+svg.fa.d-icon.d-icon-paint-brush.svg-icon.svg-string,
+svg.fa.d-icon.d-icon-cog.svg-icon.svg-string,
+svg.fa.d-icon.d-icon-eye.svg-icon.svg-string,
+svg.fa.d-icon.d-icon-angle-double-down.svg-icon.svg-string,
+svg.fa.d-icon.d-icon-angle-double-up.svg-icon.svg-string,
+svg.fa.d-icon.d-icon-far-trash-alt.svg-icon.svg-string,
+svg.fa.d-icon.d-icon-bars.svg-icon.svg-string,
+svg.fa.d-icon.d-icon-far-sun.svg-icon.svg-string,
+svg.fa.d-icon.d-icon-far-moon.svg-icon.svg-string,
+svg.fa.d-icon.d-icon-bed.svg-icon.svg-string,
+svg.fa.d-icon.d-icon-briefcase.svg-icon.svg-string,
+svg.fa.d-icon.d-icon-sign-out-alt.svg-icon.svg-node,
+svg.fa.d-icon.d-icon-user.svg-icon.svg-node,
+svg.fa.d-icon.d-icon-random.svg-icon.svg-string {
+  display: $n;
+}
+
+// exceptions
+
+.user-menu svg.fa.d-icon.d-icon-bookmark.svg-icon.svg-node {
+  display: inline-flex;
+}
+
+//remove badges
+.badge-card .badge-contents .badge-icon,
+.user-menu .quick-access-panel li .d-icon {
+  display: none;
+}
+
+//mobile view
+.mobile-view {
+  .topic-post nav.post-controls button {
+    max-width: none;
+  }
 }
