@@ -684,6 +684,29 @@ img.avatar {
   border-radius: none;
 }
 
+.d-header-icons .badge-notification {
+  position: absolute;
+  z-index: 1;
+  left: 6px;
+  top: -1px;
+  min-width: 0.6em;
+}
+
+.btn:hover d-icon {
+  color: inherit;
+}
+
+.modal-header .modal-close {
+  align-self: flex-start;
+  order: 2;
+  margin-left: auto;
+  padding-left: none;
+}
+
+d-header-icons .badge-notification {
+  left: 0;
+  top: -2px;
+}
 /*----------------------------------removing nav icons for desktop----------------------------*/
 
 #current-user a.icon:before {
