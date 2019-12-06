@@ -62,12 +62,13 @@ html {
   align-items: flex-start;
   // position: fixed;
   /* overflow-y: auto; */
+  position: absolute;
   height: 40px;
   font-size: 18px;
   font-family: Lato, sans-serif;
-  height: 38px;
+  height: $--header-height;
   background-color: $--gray90;
-  z-index: 1000;
+  z-index: 10000;
   color: #fff;
   width: 100%;
 }
@@ -121,7 +122,7 @@ html {
 }
 
 .site-nav .nav {
-  height: 38px;
+  height: $--header-height;
 }
 
 .site-nav .nav li {
@@ -136,6 +137,7 @@ html {
   margin: 0;
   padding: 5px 15px;
   color: #fff;
+  height: $--header-height;
   opacity: 1;
   font-family: "Roboto Mono", monospace;
 }
@@ -153,7 +155,7 @@ html {
   flex-shrink: 0;
   display: flex;
   align-items: center;
-  height: 38px;
+  height: $--header-height;
 }
 
 .toggle-button-nav {
@@ -692,6 +694,14 @@ img.avatar {
   min-width: 0.6em;
 }
 
+.ember-application .d-header {
+  margin-top: $--header-height;
+}
+
+.docked .ember-application .d-header {
+  margin-top: 0;
+}
+
 .btn:hover d-icon {
   color: inherit;
 }
@@ -740,7 +750,7 @@ d-header-icons .badge-notification {
   color: blue;
 }
 
-#site-logo,
+.d-header #site-logo,
 #current-user div img,
 .fa.d-icon.d-icon-search.svg-icon.svg-node,
 .fa.d-icon.d-icon-bars.svg-icon.svg-node {
@@ -754,7 +764,7 @@ d-header-icons .badge-notification {
     background-color: white;
     color: $--gray90;
   }
-  height: 38px;
+  height: $--header-height;
   width: 90px;
   padding: 0px;
 }
@@ -800,7 +810,6 @@ d-header-icons .badge-notification {
 
 .docked #site-logo.logo-big {
   height: 24px;
-  width: 210px;
   margin: 7px 0px;
 }
 
@@ -827,7 +836,7 @@ d-header-icons .badge-notification {
 }
 
 .d-header {
-  height: 38px;
+  height: $--header-height;
   border-bottom: 1px solid $--gray75;
   box-shadow: none;
 }
@@ -965,7 +974,7 @@ td.poster-names a {
     padding: 6px 12px;
     font-size: $font-up-1;
     transition: none;
-    height: 38px; // IE11 needs any height here for vertical centering, overriden elsewhere by min-height
+    height: $--header-height; // IE11 needs any height here for vertical centering, overriden elsewhere by min-height
     &:hover,
     &:focus {
       color: $fcc-secondary-background;

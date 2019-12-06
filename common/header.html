@@ -1,59 +1,76 @@
-<nav class="site-nav nav-padding">
-  <div class="site-nav-left">
-    <form onsubmit="submitSearch()">
-      <div role="search" class="searchbox__wrapper">
-        <input
-          type="search"
-          placeholder="Search 5,000+ tutorials"
-          id="search-input"
-        />
-        <button
-          type="submit"
-          title="Submit your search query."
-          class="ais-SearchBox-submit"
-        >
-          <svg
-            class="ais-SearchBox-submitIcon"
-            xmlns="http://www.w3.org/2000/svg"
-            width="10"
-            height="10"
-            viewBox="0 0 40 40"
-          >
-            <path
-              d="M26.804 29.01c-2.832 2.34-6.465 3.746-10.426 3.746C7.333 32.756 0 25.424 0 16.378 0 7.333 7.333 0 16.378 0c9.046 0 16.378 7.333 16.378 16.378 0 3.96-1.406 7.594-3.746 10.426l10.534 10.534c.607.607.61 1.59-.004 2.202-.61.61-1.597.61-2.202.004L26.804 29.01zm-10.426.627c7.323 0 13.26-5.936 13.26-13.26 0-7.32-5.937-13.257-13.26-13.257C9.056 3.12 3.12 9.056 3.12 16.378c0 7.323 5.936 13.26 13.258 13.26z"
-            />
-          </svg>
-        </button>
-      </div>
-    </form>
-  </div>
-  <div class="site-nav-middle">
-    <a class="site-nav-logo" href="/" data-auto-route="true"
-      ><img
-        src="https://s3.amazonaws.com/cdn-media-1.freecodecamp.org/forum/fcc_primary_large_24X210.svg"
-        alt="freecodecamp logo"
-    /></a>
-  </div>
-  <div class="site-nav-right main-nav">
-    <div class="main-nav-group">
-      <ul class="nav" role="menu">
-        <li class="nav-news nav-current" role="menuitem">
-          <a href="https://www.freecodecamp.org/news/">/news</a>
-        </li>
-        <li class="nav-forum" role="menuitem">
-          <a href="/" data-auto-route="true">/forum</a>
-        </li>
-        <li class="nav-learn" role="menuitem">
-          <a href="https://www.freecodecamp.org/learn/">/learn</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <button class="site-nav-right toggle-button-nav">
-    Menu
-  </button>
-</nav>
+<!-- create a link home -->
+<script type="text/discourse-plugin" version="0.8">
+  const h = require("virtual-dom").h;
 
+  api.createWidget("home-link", {
+    tagName: "div.my-widget",
+
+    html() {
+      return h('a',{ attributes: { href: Discourse.getURL("/") } }, "/forum");
+    }
+  });
+</script>
+
+<!-- inject the header in the plugin outlet -->
+<script
+  type="text/x-handlebars"
+  data-template-name="/connectors/above-site-header/brand-header"
+>
+  <nav class="site-nav nav-padding">
+      <div class="site-nav-left">
+        <form onsubmit="submitSearch()">
+          <div role="search" class="searchbox__wrapper">
+            <input
+              type="search"
+              placeholder="Search 5,000+ tutorials"
+              id="search-input"
+            />
+            <button
+              type="submit"
+              title="Submit your search query."
+              class="ais-SearchBox-submit"
+            >
+              <svg
+                class="ais-SearchBox-submitIcon"
+                xmlns="http://www.w3.org/2000/svg"
+                width="10"
+                height="10"
+                viewBox="0 0 40 40"
+              >
+                <path
+                  d="M26.804 29.01c-2.832 2.34-6.465 3.746-10.426 3.746C7.333 32.756 0 25.424 0 16.378 0 7.333 7.333 0 16.378 0c9.046 0 16.378 7.333 16.378 16.378 0 3.96-1.406 7.594-3.746 10.426l10.534 10.534c.607.607.61 1.59-.004 2.202-.61.61-1.597.61-2.202.004L26.804 29.01zm-10.426.627c7.323 0 13.26-5.936 13.26-13.26 0-7.32-5.937-13.257-13.26-13.257C9.056 3.12 3.12 9.056 3.12 16.378c0 7.323 5.936 13.26 13.258 13.26z"
+                />
+              </svg>
+            </button>
+          </div>
+        </form>
+      </div>
+      <div class="site-nav-middle">
+        <div class="site-nav-logo"
+          >{{mount-widget widget="home-logo"}}</div>
+      </div>
+      <div class="site-nav-right main-nav">
+        <div class="main-nav-group">
+          <ul class="nav" role="menu">
+            <li class="nav-news nav-current" role="menuitem">
+              <a href="https://www.freecodecamp.org/news/">/news</a>
+            </li>
+            <li class="nav-forum" role="menuitem">
+                {{mount-widget widget="home-link"}}
+            </li>
+            <li class="nav-learn" role="menuitem">
+              <a href="https://www.freecodecamp.org/learn/">/learn</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <button class="site-nav-right toggle-button-nav">
+        Menu
+      </button>
+    </nav>
+</script>
+
+<!-- toggle menu class toggle -->
 <script>
   $(document).ready(function() {
     $(".toggle-button-nav").click(function() {
@@ -65,7 +82,9 @@
   });
 </script>
 
-<!-- <script src="https://cdn.freecodecamp.org/news-assets/algolia/autocomplete-0-36-0/autocomplete.min.js"></script>
+<!-- algolia search -->
+
+<script src="https://cdn.freecodecamp.org/news-assets/algolia/autocomplete-0-36-0/autocomplete.min.js"></script>
 <script src="https://cdn.freecodecamp.org/news-assets/algolia/algoliasearch-3-33-0/algoliasearch.min.js"></script>
 <script>
   const client = algoliasearch(
@@ -156,4 +175,4 @@
       );
     }
   }
-</script> -->
+</script>
